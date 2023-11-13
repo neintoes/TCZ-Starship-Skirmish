@@ -1,0 +1,42 @@
+{
+    "image1": {
+        "data": "hwQRABgAAAAAAAAAAP////////8AAAAAAL+7zMz8y/wAAAAAAPD/z8z///8AAAAAAAAA//8AAAAAAAD///////8P//8A8P/d3d3N/L////Xwv7u7zMzM//////+/zfz/393dzN/7+/u/zfH/393dzd/7+/u/zf//393dzN/7+/vwv7u7zMzM//////8A8P/d3d3N/L////UAAAD///////8P//8AAAAAAAAA//8AAAAAAAAAAPD//8z///8AAAAAAL+7zMz8y/wAAAAAAP////////8=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "ship"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAABIhAAAAAAAAEiEAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "player projectile"
+    },
+    "image4": {
+        "data": "hwQRABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANDd3d0AAAAAAAAAAN3d3d0NAAAAAAAA0N3d3d3dAAAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA3d3d3d3dDQAAAAAA0N3d3d3dAAAAAAAAAN3d3d0NAAAAAAAAANDd3d0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "space dust"
+    },
+    "image6": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwBwAAAAAAABdxAAAAAAAAF3EAAAAAAABwBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy projectile"
+    },
+    "image5": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "empty"
+    },
+    "image7": {
+        "data": "hwQQABAAAAAA/////w8AAPB/93d//wAA8H/3d3/3DwAA//////8PAAAAX/UAAAAAAPD//w8AAAAA/3d3////D//////3h4j3//////eHiPcA/3d3////DwDw//8PAAAAAABf9QAAAAAA//////8PAPB/93d/9w8A8H/3d3//AAAA/////w8AAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy ship 2"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAPD/////DwAAL19fLyLyAPAvX18vIvLw/yL///////D/Ii8PAAAAAP//////AADw/yUiIiIPAP/yIpYpIvIA//Iiliki8gDw/yUiIiIPAAD//////wAA8P8iLw8AAADw/yL//////wDwL19fLyLyAAAvX18vIvIAAPD/////Dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy ship 1"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
