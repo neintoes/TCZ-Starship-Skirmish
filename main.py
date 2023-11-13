@@ -5,9 +5,13 @@ class SpriteKind:
 # variables
 deceleration = 0.9
 player_speed = 20
+player_shot_speed = -100
 enemy_shot_speed = 70
 enemy_placements = []
 wave_timer = 5000
+# GH1
+powerup_overheated = False
+# end GH1
 
 # sprites
 ship = sprites.create(assets.image("ship"), SpriteKind.player)
@@ -18,6 +22,12 @@ formation_center = sprites.create(assets.image("empty"))
 formation_center.set_position(80, 60)
 formation_center.set_bounce_on_wall(True)
 formation_center.set_velocity(randint(-10, 10), randint(-10, 10))
+# GH1
+powerup_bar = statusbars.create(60, 3, StatusBarKind.magic)
+powerup_bar.set_position(128, 118)
+powerup_bar.max = 100
+powerup_bar.value = 0
+# end GH1
 
 # setup
 info.set_life(3)
@@ -69,6 +79,10 @@ def decrease_wave_timer():
 game.on_update_interval(15000, decrease_wave_timer)
 
 def destroy_enemy(projectile, enemy):
+    # GH1
+    if not powerup_overheated:
+        powerup_bar.value += 5
+    # end GH1
     info.change_score_by(100)
     projectile.destroy()
     enemy.destroy(effects.disintegrate)
@@ -81,8 +95,44 @@ sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, player_hit)
 sprites.on_overlap(SpriteKind.player, SpriteKind.enemy_projectile, player_hit)
 
 def player_fire():
-    sprites.create_projectile_from_sprite(assets.image("player projectile"), ship, 0, -100)
+    sprites.create_projectile_from_sprite(assets.image("player projectile"), ship, 0, player_shot_speed)
+    music.thump.play()
 controller.A.on_event(ControllerButtonEvent.PRESSED, player_fire)
+
+# GH1
+def fire_at_angle(angle):
+    angle_in_radians = spriteutils.degrees_to_radians(angle)
+    projectile = sprites.create(assets.image("player projectile"), SpriteKind.projectile)
+    projectile.set_position(ship.x, ship.y)
+    projectile.set_flag(SpriteFlag.AUTO_DESTROY, True)
+    spriteutils.set_velocity_at_angle(projectile, angle_in_radians, player_shot_speed)
+    music.thump.play()
+
+def burst_fire():
+    global powerup_overheated
+    if powerup_bar.value == 100:
+        powerup_overheated = True
+        powerup_bar.value = 0
+        powerup_bar.set_color(2, 2)
+        launch_angle = 0
+        for i in range(18):
+            launch_angle += 10
+            fire_at_angle(launch_angle)
+            pause(20)
+        for i in range(18):
+            launch_angle -= 10
+            fire_at_angle(launch_angle)
+            pause(20)
+        powerup_cooldown()
+controller.B.on_event(ControllerButtonEvent.PRESSED, burst_fire)
+
+def powerup_cooldown():
+    global powerup_overheated
+    pause(5000)
+    powerup_overheated = False
+    powerup_bar.set_color(8, 11)
+    music.jump_up.play()
+# end GH1
 
 def player_movement():
     if controller.left.is_pressed():
